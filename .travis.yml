@@ -1,7 +1,7 @@
 language: c
 os: osx
 compiler: clang
-osx_image: xcode9.2
+osx_image: xcode9.1
 cache:
   directories:
   - "$HOME/.gem/ruby"
@@ -22,7 +22,7 @@ script:
 - brew bottle dip
 before_deploy:
 - export RELEASE_FILES=$(ls *.bottle*.tar.gz)
-- "echo 'Deploying files to GitHub: '$RELEASE_FILES"
+- "echo 'Deploying files to GitHub: '${RELEASE_FILES}"
 deploy:
   provider: releases
   api_key:
