@@ -19,15 +19,15 @@ script:
 - brew install --build-bottle poet
 - brew bottle dip
 - brew bottle poet
-before_deploy:
-- export RELEASE_FILES=$(ls *.bottle*.tar.gz)
-- "echo 'Deploying files to GitHub: '${RELEASE_FILES}"
-deploy:
-  provider: releases
-  api_key:
-    secure: k0Z1IVo7HV7eTNES7Wf4zb1OpuMVA+FZ14XrPRurXKfsAd8EUulaTiYI7uMMtXUgGyNNsnQ84BhusEKxguVp5x/7iYFhCZKHdl/8HLF3ZyjICwQ+MSgYu3GVGOVRtuAcHEDfh/hTbpvLg28WePlegxQKjfhwkacoODVukV2ETy4i5GBtvv/sVcvuO4iUIGgmqSN+zULWs87qWvQXHzE+zVisok/u0O1OjOE46vsGq/oR/qt/n3iC7m6ovCIw2feDtlzLP0YZ/6GAorGlSIIUJPoxqpCyVFeMBLBZggDfaWC7c8uf439hZIugpAx8z7q1sSue36rm+NgHhrkC3TvdotDx9NNJ+93ratH3MDZjQGe0wN7atSWIUkI5RZ9EyPn2/xoPlSkunRGzQWmHCQm5gBODfNWBcfDn87TWU1FMQeFvEM497rBuvqV57Q4qBqrDfPyOkpx2CW60Uetg6mYN8lsYBejY6jIu6jfuu+zg5gvZTedUda9BZ0qmN8zkQdgGDWdwTKQLJ5l4X14t/ccUcQSe/tyasvvt3WCOq4ZwTmJXgvtwmO1OzPnTZhEWRaWIENdmbMH1wPRzplfIUB1aa4TApn8qitH0Rljy42Gyp0hppc6hLcqq1mbSABfcjJdKbQHOcCOjfOe8Y7P8+nhh7aednftkdH9PPA637CFxgdo=
-  file: "${RELEASE_FILES}"
-  skip_cleanup: true
-  on:
-    repo: amancevice/homebrew-tap
-    tags: true
+# before_deploy:
+# - export RELEASE_FILES=$(ls *.bottle*.tar.gz)
+# - "echo 'Deploying files to GitHub: '${RELEASE_FILES}"
+# deploy:
+#   provider: releases
+#   api_key:
+#     secure: k0Z1IVo7HV7eTNES7Wf4zb1OpuMVA+FZ14XrPRurXKfsAd8EUulaTiYI7uMMtXUgGyNNsnQ84BhusEKxguVp5x/7iYFhCZKHdl/8HLF3ZyjICwQ+MSgYu3GVGOVRtuAcHEDfh/hTbpvLg28WePlegxQKjfhwkacoODVukV2ETy4i5GBtvv/sVcvuO4iUIGgmqSN+zULWs87qWvQXHzE+zVisok/u0O1OjOE46vsGq/oR/qt/n3iC7m6ovCIw2feDtlzLP0YZ/6GAorGlSIIUJPoxqpCyVFeMBLBZggDfaWC7c8uf439hZIugpAx8z7q1sSue36rm+NgHhrkC3TvdotDx9NNJ+93ratH3MDZjQGe0wN7atSWIUkI5RZ9EyPn2/xoPlSkunRGzQWmHCQm5gBODfNWBcfDn87TWU1FMQeFvEM497rBuvqV57Q4qBqrDfPyOkpx2CW60Uetg6mYN8lsYBejY6jIu6jfuu+zg5gvZTedUda9BZ0qmN8zkQdgGDWdwTKQLJ5l4X14t/ccUcQSe/tyasvvt3WCOq4ZwTmJXgvtwmO1OzPnTZhEWRaWIENdmbMH1wPRzplfIUB1aa4TApn8qitH0Rljy42Gyp0hppc6hLcqq1mbSABfcjJdKbQHOcCOjfOe8Y7P8+nhh7aednftkdH9PPA637CFxgdo=
+#   file: "${RELEASE_FILES}"
+#   skip_cleanup: true
+#   on:
+#     repo: amancevice/homebrew-tap
+#     tags: true
