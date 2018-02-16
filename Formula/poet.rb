@@ -6,6 +6,12 @@ class Poet < Formula
   url "https://github.com/tdsmith/homebrew-pypi-poet/archive/v0.9.0.tar.gz"
   sha256 "41dd7203ce4f281a2d76c0e67d11163c7601967761ec22fbc77fda01f88ff911"
 
+  bottle do
+    root_url "https://github.com/amancevice/homebrew-tap/releases/download/poet-0.9.0"
+    cellar :any_skip_relocation
+    sha256 "c518bc2a81427bd0536948024a431ab34876652f1f2a2aa64d98ed4985b0fc74" => :high_sierra
+  end
+
   depends_on "python3"
 
   resource "Jinja2" do
