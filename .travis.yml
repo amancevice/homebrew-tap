@@ -1,5 +1,4 @@
 language: c
-sudo: true
 os: osx
 compiler: clang
 osx_image: xcode9.1
@@ -22,6 +21,8 @@ script:
 - brew install --build-bottle dip
 - brew bottle dip
 before_deploy:
+- brew remove openssl
+- brew install openssl
 - export RELEASE_FILES=$(ls *.bottle*.tar.gz)
 - "echo 'Deploying files to GitHub: '${RELEASE_FILES}"
 deploy:
