@@ -16,13 +16,13 @@ before_install:
 - mkdir -p "$HOMEBREW_TAP_DIR"
 - rm -rf "$HOMEBREW_TAP_DIR"
 - ln -s "$PWD" "$HOMEBREW_TAP_DIR"
+- brew remove openssl
+- brew install openssl
 script:
 - brew test-bot
 - brew install --build-bottle dip
 - brew bottle dip
 before_deploy:
-- brew remove openssl
-- brew install openssl
 - export RELEASE_FILES=$(ls *.bottle*.tar.gz)
 - "echo 'Deploying files to GitHub: '${RELEASE_FILES}"
 deploy:
