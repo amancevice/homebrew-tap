@@ -4,7 +4,7 @@ class Poet < Formula
   desc "Shiny new formula"
   homepage "https://github.com/tdsmith/homebrew-pypi-poet"
   url "https://github.com/tdsmith/homebrew-pypi-poet/archive/v0.9.0.tar.gz"
-  sha256 "15da22ba98f40f43ddc23c6e01e4e68054ac5b9b0f83b698d33f5fbe78f78743"
+  sha256 "41dd7203ce4f281a2d76c0e67d11163c7601967761ec22fbc77fda01f88ff911"
 
   depends_on "python3"
 
