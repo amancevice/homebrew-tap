@@ -8,8 +8,10 @@ class Dip < Formula
   head "https://github.com/amancevice/dip.git"
 
   bottle do
+    root_url "https://github.com/amancevice/homebrew-tap/releases/download/dip-1.3.5/"
     cellar :any
     sha256 "9336919ce7225a7c4fcaeda6a21bf5853859507d90143c90e8fc63c49411b065" => :high_sierra
+    sha256 "b27059b5a5352234ab6450053743527159fed0693c82593403745b68eaf0bcd9" => :el_capitan
   end
 
   depends_on "python3"
