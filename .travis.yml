@@ -14,8 +14,8 @@ before_install:
 - rm -rf "$HOMEBREW_TAP_DIR"
 - ln -s "$PWD" "$HOMEBREW_TAP_DIR"
 - brew unlink openssl
-- brew install openssl --force
-- brew link openssl --force
+- brew install --force openssl
+- brew link --force openssl
 script:
 - brew test-bot
 - brew install --build-bottle dip
