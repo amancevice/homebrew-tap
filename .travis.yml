@@ -7,15 +7,13 @@ cache:
   - "$HOME/.gem/ruby"
   - Library/Homebrew/vendor/bundle
 before_install:
+- brew list
 - sudo chown -R "$USER" "$(brew --repo)"
 - travis_retry brew update
 - HOMEBREW_TAP_DIR="$(brew --repo "$TRAVIS_REPO_SLUG")"
 - mkdir -p "$HOMEBREW_TAP_DIR"
 - rm -rf "$HOMEBREW_TAP_DIR"
 - ln -s "$PWD" "$HOMEBREW_TAP_DIR"
-- brew uninstall --ignore-dependencies openssl
-- brew install openssl
-- brew link openssl
 script:
 - brew test-bot
 - brew install --build-bottle dip
