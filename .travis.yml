@@ -14,7 +14,6 @@ before_install:
 
 install:
 - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
-- brew unlink dip
 
 script:
 - travis_wait 30 brew install --build-bottle dip --c++11
