@@ -1,35 +1,52 @@
-language: c
-os: osx
-compiler: clang
-osx_image:
-- xcode9.2
-- xcode9.1
-cache:
-  directories:
-  - "$HOME/.gem/ruby"
-  - Library/Homebrew/vendor/bundle
+sudo: false
+
+language: cpp
+
+os:
+  - osx
+
+compiler:
+  - clang
+#  - gcc
+
+# Only build the master branch, otherwise once the release is added, Github
+# creates a tag which triggers another identical build.
+branches:
+  only:
+    - master
+
 before_install:
-- sudo chown -R "$USER" "$(brew --repo)"
-- travis_retry brew update
-- HOMEBREW_TAP_DIR="$(brew --repo "$TRAVIS_REPO_SLUG")"
-- mkdir -p "$HOMEBREW_TAP_DIR"
-- rm -rf "$HOMEBREW_TAP_DIR"
-- ln -s "$PWD" "$HOMEBREW_TAP_DIR"
+  - brew update
+
+install:
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+  - brew unlink dip
+
 script:
-- brew test-bot
-- brew install --build-bottle dip
-- brew install --build-bottle poet
-- brew bottle dip
-- brew bottle poet
-# before_deploy:
-# - export RELEASE_FILES=$(ls *.bottle*.tar.gz)
-# - "echo 'Deploying files to GitHub: '${RELEASE_FILES}"
-# deploy:
-#   provider: releases
-#   api_key:
-#     secure: k0Z1IVo7HV7eTNES7Wf4zb1OpuMVA+FZ14XrPRurXKfsAd8EUulaTiYI7uMMtXUgGyNNsnQ84BhusEKxguVp5x/7iYFhCZKHdl/8HLF3ZyjICwQ+MSgYu3GVGOVRtuAcHEDfh/hTbpvLg28WePlegxQKjfhwkacoODVukV2ETy4i5GBtvv/sVcvuO4iUIGgmqSN+zULWs87qWvQXHzE+zVisok/u0O1OjOE46vsGq/oR/qt/n3iC7m6ovCIw2feDtlzLP0YZ/6GAorGlSIIUJPoxqpCyVFeMBLBZggDfaWC7c8uf439hZIugpAx8z7q1sSue36rm+NgHhrkC3TvdotDx9NNJ+93ratH3MDZjQGe0wN7atSWIUkI5RZ9EyPn2/xoPlSkunRGzQWmHCQm5gBODfNWBcfDn87TWU1FMQeFvEM497rBuvqV57Q4qBqrDfPyOkpx2CW60Uetg6mYN8lsYBejY6jIu6jfuu+zg5gvZTedUda9BZ0qmN8zkQdgGDWdwTKQLJ5l4X14t/ccUcQSe/tyasvvt3WCOq4ZwTmJXgvtwmO1OzPnTZhEWRaWIENdmbMH1wPRzplfIUB1aa4TApn8qitH0Rljy42Gyp0hppc6hLcqq1mbSABfcjJdKbQHOcCOjfOe8Y7P8+nhh7aednftkdH9PPA637CFxgdo=
-#   file: "${RELEASE_FILES}"
-#   skip_cleanup: true
-#   on:
-#     repo: amancevice/homebrew-tap
-#     tags: true
+  - travis_wait 30 brew install --build-bottle boost --c++11
+  - brew bottle dip
+
+before_deploy:
+  - export RELEASE_FILES=$(ls *.bottle*.tar.gz)
+  - "echo 'Deploying files to Github: '$RELEASE_FILES"
+
+deploy:
+  provider: releases
+  api_key:
+    secure: >
+      k0Z1IVo7HV7eTNES7Wf4zb1OpuMVA+FZ14XrPRurXKfsAd8EUulaTiYI7uMMtXUgGyNNsnQ84
+      BhusEKxguVp5x/7iYFhCZKHdl/8HLF3ZyjICwQ+MSgYu3GVGOVRtuAcHEDfh/hTpvLg28WePl
+      egxQKjfhwkacoODVukV2ETy4i5GBtvv/sVcvuO4iUIGgmqSN+zULWs87qWvQXHzE+zVisok/u
+      0O1OjOE46vsGq/oR/qt/n3iC7m6ovCIw2feDtlzLP0YZ/6GAorGlSIIUJPoxqpCyVFeBLBZgg
+      DfaWC7c8uf439hZIugpAx8z7q1sSue36rm+NgHhrkC3TvdotDx9NNJ+93ratH3MDZjQGe0wN7
+      atSWIUkI5RZ9EyPn2/xoPlSkunRGzQWmHCQm5gBODfNWBcfDn87TWU1FMQeFvEM497rBuvq57
+      Q4qBqrDfPyOkpx2CW60Uetg6mYN8lsYBejY6jIu6jfuu+zg5gvZTedUda9BZ0qmN8zkQdgGDW
+      dwTKQLJ5l4X14t/ccUcQSe/tyasvvt3WCOq4ZwTmJXgvtwmO1OzPnTZhEWRaWIENdmbMH1wPR
+      zpfIUB1aa4TApn8qitH0Rljy42Gyp0hppc6hLcqq1mbSABfcjJdKbQHOcCOjfOe8Y7P8+nhh7
+      aednftkdH9PPA637CFxgdo=
+  file: "${RELEASE_FILES}"
+  overwrite: true
+  skip_cleanup: true
+  on:
+    repo: amancevice/homebrew-tap
+    tags: true
