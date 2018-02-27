@@ -1,11 +1,17 @@
-language: cpp
+language: c
 os: osx
 compiler: clang
 osx_image: xcode9.2
+cache:
+  directories:
+  - "$HOME/.gem/ruby"
+  - Library/Homebrew/vendor/bundle
+branches:
+  only:
+  - master
 before_install:
 - sudo chown -R "$USER" "$(brew --repo)"
 - travis_retry brew update
-- travis_retry brew upgrade
 - HOMEBREW_TAP_DIR="$(brew --repo "$TRAVIS_REPO_SLUG")"
 - mkdir -p "$HOMEBREW_TAP_DIR"
 - rm -rf "$HOMEBREW_TAP_DIR"
@@ -16,6 +22,7 @@ script:
 - brew install --build-bottle poet
 - brew bottle dip
 - brew bottle poet
+- mv *.bottle*.tar.gz Bottle/
 before_deploy:
 - export RELEASE_FILES=$(ls *.bottle*.tar.gz)
 - "echo 'Deploying files to GitHub: '${RELEASE_FILES}"
@@ -28,4 +35,3 @@ deploy:
   skip_cleanup: true
   on:
     repo: amancevice/homebrew-tap
-    tags: true
