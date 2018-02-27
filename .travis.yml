@@ -24,12 +24,12 @@ script:
 - brew bottle poet
 - mv *.bottle*.tar.gz Bottle/
 before_deploy:
-- export RELEASE_FILES=$(ls *.bottle*.tar.gz)
-- "echo 'Deploying files to GitHub: '${RELEASE_FILES}"
+- export RELEASE_FILES=$(ls Bottle/*.bottle*.tar.gz)
+- 'echo "Deploying files to GitHub: ${RELEASE_FILES}"'
 deploy:
   provider: releases
   api_key:
-    secure: k0Z1IVo7HV7eTNES7Wf4zb1OpuMVA+FZ14XrPRurXKfsAd8EUulaTiYI7uMMtXUgGyNNsnQ84BhusEKxguVp5x/7iYFhCZKHdl/8HLF3ZyjICwQ+MSgYu3GVGOVRtuAcHEDfh/hTbpvLg28WePlegxQKjfhwkacoODVukV2ETy4i5GBtvv/sVcvuO4iUIGgmqSN+zULWs87qWvQXHzE+zVisok/u0O1OjOE46vsGq/oR/qt/n3iC7m6ovCIw2feDtlzLP0YZ/6GAorGlSIIUJPoxqpCyVFeMBLBZggDfaWC7c8uf439hZIugpAx8z7q1sSue36rm+NgHhrkC3TvdotDx9NNJ+93ratH3MDZjQGe0wN7atSWIUkI5RZ9EyPn2/xoPlSkunRGzQWmHCQm5gBODfNWBcfDn87TWU1FMQeFvEM497rBuvqV57Q4qBqrDfPyOkpx2CW60Uetg6mYN8lsYBejY6jIu6jfuu+zg5gvZTedUda9BZ0qmN8zkQdgGDWdwTKQLJ5l4X14t/ccUcQSe/tyasvvt3WCOq4ZwTmJXgvtwmO1OzPnTZhEWRaWIENdmbMH1wPRzplfIUB1aa4TApn8qitH0Rljy42Gyp0hppc6hLcqq1mbSABfcjJdKbQHOcCOjfOe8Y7P8+nhh7aednftkdH9PPA637CFxgdo=
+    secure: 1SuwEiiQpnHVFwgNwTHSOeL7UgSNk4B3rwflpj8wfjkavVBGMeVj7wHJJuOga3201XK4mk9FYB9KYXrCxXk4j/wz9JVcdDZG/9Q4Omw2uIKtfTGR98+/xXw2JK8pPmphoBg/9YDaAo207iwj4vf1E20ohWkqeGktMCw4KLmIdlKxOEdUlI/0uvhYCyspnFFrMsxq25HhEksWNJEHulhFe2+48kFpG2TK9boQZBf0I9vCXDP739nudtzVBRI2yO2iv9yU/eRWGFXHbg43rM2fLXEJnhxXcbu1E8mH6JWQ2m86QAnsgB/A2oEAS4ubRIMrb4/XV14bsxmG/xNvt1ivBCA56azY1yU/hJdpJQvSnx/K0MJSOO508Pn6zcmeCccy1F77a8IsIIp3jUJEjW64TBzCKSAq2fcUQVcbx9MIouWaN9iptVVdOnGL+LW3GrkHs7aRSjy45fpEb09oD/1/88W9Wj/34ryJbgt+SzeJoDmGKb8fGsVKfyV0bho3CEMUFxmYTSAIQegvjNrqezkyOwekjhUBzXXPjNgELg/EisVkpqDUx57Y7e40Y+Gez7wpO4m3RJxRBk89dqx3F9BIPXLZJ4UXWrfvxbz7hLE1mc7hsEi4jT3x4jQ7JhnzbE6NIq9st5JfmhiesHmHsMuK7DYlMx4MNoVk+Y6T9suHcxU=
   file: "${RELEASE_FILES}"
   overwrite: true
   skip_cleanup: true
