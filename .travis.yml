@@ -14,7 +14,7 @@ before_install:
 - rm -rf "$HOMEBREW_TAP_DIR"
 - ln -s "$PWD" "$HOMEBREW_TAP_DIR"
 script:
-- brew test-bot
+# - brew test-bot
 - brew install --build-bottle dip
 - brew install --build-bottle poet
 - brew bottle dip
