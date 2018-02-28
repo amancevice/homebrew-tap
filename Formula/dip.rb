@@ -10,6 +10,7 @@ class Dip < Formula
   bottle do
     root_url "https://github.com/amancevice/homebrew-tap/releases/download/dip-1.3.6"
     cellar :any
+    rebuild 1
     sha256 "2400dbc3c01f2e91ee87ff5fe978b963bf2df856e1483c5c60413b5f8e835a81" => :high_sierra
     sha256 "d2864835a1d4dbcbc17143a4230e3f9834b1aaecd352efbd9a341fcd4530c3e5" => :sierra
   end
@@ -126,7 +127,8 @@ class Dip < Formula
     virtualenv_install_with_resources
   end
 
-  def caveats; <<~EOS
+  def caveats
+    <<~EOS
     Use envrionmental variables:
       * DIP_HOME
       * DIP_PATH
