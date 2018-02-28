@@ -14,8 +14,12 @@ before_install:
 - rm -rf "$HOMEBREW_TAP_DIR"
 - ln -s "$PWD" "$HOMEBREW_TAP_DIR"
 script:
-- brew test-bot amancevice/tap/dip
-- brew test-bot amancevice/tap/poet
+- brew audit --online amancevice/tap/dip
+- brew audit --online amancevice/tap/poet
+- brew install --build-bottle amancevice/tap/dip
+- brew install --build-bottle amancevice/tap/poet
+- brew bottle amancevice/tap/dip
+- brew bottle amancevice/tap/poet
 deploy:
 - provider: releases
   api_key:
