@@ -9,7 +9,9 @@ class Poet < Formula
   bottle do
     root_url "https://github.com/amancevice/homebrew-tap/releases/download/poet-0.9.0"
     cellar :any
+    rebuild 2
     sha256 "05a1d42e90bf8b535b29b47cf0f83bbeef86dee08ab578d89fff9985e5dbfa9f" => :high_sierra
+    sha256 "fd09b0e350e3153a9cf2442236f2e7d39e6505e6085978cca6edb2e0dca70692" => :sierra
   end
 
   depends_on "python3"
