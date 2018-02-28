@@ -10,6 +10,7 @@ class Dip < Formula
   bottle do
     root_url "https://github.com/amancevice/homebrew-tap/releases/download/dip-1.3.6"
     cellar :any
+    sha256 "41a1957d86f6561e838b85999ee57d70f65c386de31110b369e24dfae49eef92" => :high_sierra
   end
 
   depends_on "python3"
