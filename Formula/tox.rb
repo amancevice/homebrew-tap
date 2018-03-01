@@ -10,6 +10,7 @@ class Tox < Formula
     root_url "https://github.com/amancevice/homebrew-tap/releases/download/tox-2.9.1"
     cellar :any
     sha256 "d3559ec239b540960dbad26053f5f1a3889e85c6e27129a2e431eedc2a25dd46" => :high_sierra
+    sha256 "c5529f0b01ee380df03a53d8430c1de66eaa10435897d989d3d2f26a50af7c09" => :sierra
   end
 
   depends_on "python3"
