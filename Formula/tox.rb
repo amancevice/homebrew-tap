@@ -4,7 +4,7 @@ class Tox < Formula
   desc "tox automation project"
   homepage "https://tox.readthedocs.org/"
   url "https://files.pythonhosted.org/packages/a7/36/e61f5263491a179311c4eaf40cf7c7bfd3aec9087687da25a1d900cc089a/tox-2.9.1.tar.gz"
-  sha256 "752f5ec561c6c08c5ecb167d3b20f4f4ffc158c0ab78855701a75f5cef05f4b8"
+  sha256 "aeef8bd5c465b7e6b92fcea768a95a495b8db512c2fb87bb3e72134d9b1082e6"
 
   depends_on "python3"
 
