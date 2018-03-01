@@ -13,6 +13,8 @@ before_install:
 - mkdir -p "$HOMEBREW_TAP_DIR"
 - rm -rf "$HOMEBREW_TAP_DIR"
 - ln -s "$PWD" "$HOMEBREW_TAP_DIR"
+- rm /usr/local/bin/tox
+- rm /usr/local/bin/tox-quickstart
 script:
 - brew audit --online amancevice/tap/dip
 - brew audit --online amancevice/tap/poet
