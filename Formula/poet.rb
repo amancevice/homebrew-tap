@@ -13,7 +13,7 @@ class Poet < Formula
     sha256 "9c62ff31648096d86cd459ee25e356375d30105a0cae705434c0b71f475932df" => :sierra
   end
 
-  depends_on "python3"
+  depends_on "python"
 
   resource "Jinja2" do
     url "https://files.pythonhosted.org/packages/90/61/f820ff0076a2599dd39406dcb858ecb239438c02ce706c8e91131ab9c7f1/Jinja2-2.9.6.tar.gz"

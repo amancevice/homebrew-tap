@@ -14,7 +14,7 @@ class Dip < Formula
     sha256 "bbf26f9d40bbb82840c1465d81d6bb7867aab0a25b02c8bb221744f712f674a1" => :sierra
   end
 
-  depends_on "python3"
+  depends_on "python"
 
   resource "cached-property" do
     url "https://files.pythonhosted.org/packages/06/2c/ad2baf15231a215c7be0324bdebd3175c320e60eba4cf347560d5749c5b8/cached-property-1.3.1.tar.gz"

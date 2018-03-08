@@ -13,7 +13,7 @@ class Tox < Formula
     sha256 "c5529f0b01ee380df03a53d8430c1de66eaa10435897d989d3d2f26a50af7c09" => :sierra
   end
 
-  depends_on "python3"
+  depends_on "python"
 
   resource "pluggy" do
     url "https://files.pythonhosted.org/packages/11/bf/cbeb8cdfaffa9f2ea154a30ae31a9d04a1209312e2919138b4171a1f8199/pluggy-0.6.0.tar.gz"
