@@ -3,15 +3,14 @@ class Dip < Formula
 
   desc "Distribute CLIs using docker-compose"
   homepage "https://github.com/amancevice/dip"
-  url "https://github.com/amancevice/dip/archive/1.3.6.tar.gz"
-  sha256 "96e7e36a2e682b8e7cf9505ccb40abe57414ce16a3b90601aba83ac82c37dcf8"
+  url "https://github.com/amancevice/dip/archive/2.0.1.tar.gz"
+  sha256 "74a4c2c8c0bda59d3ad5ff464f5a49d5688cbad922f43c6ab921340d9f1bfa43"
   head "https://github.com/amancevice/dip.git"
 
   bottle do
-    root_url "https://github.com/amancevice/homebrew-tap/releases/download/dip-1.3.6"
+    root_url "https://github.com/amancevice/homebrew-tap/releases/download/dip-2.0.1"
     cellar :any
-    sha256 "4d8795ac300075a18a8da2793e85d42463ac0d326905ca456ae7061174edbdc3" => :high_sierra
-    sha256 "bbf26f9d40bbb82840c1465d81d6bb7867aab0a25b02c8bb221744f712f674a1" => :sierra
+    sha256 "05d01d9a98a01e300192d79fc373917d7fd64f3e4e47dbf169e56f623ace1291" => :high_sierra
   end
 
   depends_on "python"
@@ -122,16 +121,23 @@ class Dip < Formula
   end
 
   def install
+    # Install dip
     virtualenv_create(libexec, "python3")
     virtualenv_install_with_resources
+
+    # Initialize settings
+    (buildpath/"dip/settings.json").write "{}"
+    etc.install "dip/settings.json"
   end
 
   def caveats
     <<~EOS
+
     Use envrionmental variables:
       * DIP_HOME
       * DIP_PATH
-    to customize the settings.json home and executable installation PATH
+    to customize the settings.json home and default executable installation PATH
+
     EOS
   end
 
