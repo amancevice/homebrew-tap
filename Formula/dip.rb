@@ -125,19 +125,24 @@ class Dip < Formula
     # Install dip
     virtualenv_create(libexec, "python3")
     virtualenv_install_with_resources
+  end
 
+  def post_install
     # Initialize settings
-    (buildpath/"dip/settings.json").write "{}"
+    (etc/"dip/settings.json").write "{}"
     etc.install "dip/settings.json"
   end
 
   def caveats
     <<~EOS
 
-    Use envrionmental variables:
-      * DIP_HOME
-      * DIP_PATH
-    to customize the settings.json home and default executable installation PATH
+    Installed configurations will be written to #{etc/"dip/settings.json"}
+
+    Installed executables will be written to /usr/local/bin
+
+    Customize these settings using the environmental variables:
+    - DIP_HOME
+    - DIP_PATH
 
     EOS
   end
