@@ -125,12 +125,10 @@ class Dip < Formula
     # Install dip
     virtualenv_create(libexec, "python3")
     virtualenv_install_with_resources
-  end
 
-  def post_install
     # Initialize settings
-    (etc/"dip/settings.json").write "{}"
-    etc.install "dip/settings.json"
+    (buildpath/"settings.json").write "{}"
+    (etc/"dip").install "settings.json"
   end
 
   def caveats
