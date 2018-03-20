@@ -11,6 +11,7 @@ class Dip < Formula
     root_url "https://github.com/amancevice/homebrew-tap/releases/download/dip-2.3.0"
     cellar :any
     sha256 "2a8110a38db133858cba660e34e3a9e42e82d961de145c169e43d517c98d2951" => :high_sierra
+    sha256 "7cb50345f424c1a30b4a939f85e794ec78cfc9f46213ce15c433440da250fd73" => :sierra
   end
 
   depends_on "python"
