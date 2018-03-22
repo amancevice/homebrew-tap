@@ -10,6 +10,7 @@ class Brewcleaner < Formula
     root_url "https://github.com/amancevice/homebrew-tap/releases/download/brewcleaner-1.1.0"
     cellar :any
     sha256 "49af8173ec384827ab72de9dc67e230e2577dcc44f60d60b5574f51db4530598" => :high_sierra
+    sha256 "54384e990b0eee838e566eb901e461e5fefa66583a36be9ec3aa5c98d598883a" => :sierra
   end
 
   depends_on "node"
