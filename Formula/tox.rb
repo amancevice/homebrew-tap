@@ -42,6 +42,6 @@ class Tox < Formula
 
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
-    assert_match "Usage", shell_output("#{bin}/dip --help")
+    assert_match "Usage", shell_output("#{bin}/tox --help")
   end
 end

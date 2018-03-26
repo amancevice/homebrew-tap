@@ -136,13 +136,13 @@ class Dip < Formula
 
   def caveats
     <<~EOS
-    Installed configurations will be written to #{etc/"dip/settings.json"}
+      Installed configurations will be written to #{etc/"dip/settings.json"}
 
-    Installed executables will be written to /usr/local/bin
+      Installed executables will be written to /usr/local/bin
 
-    Customize these settings using the environmental variables:
-    - DIP_HOME
-    - DIP_PATH
+      Customize these settings using the environmental variables:
+      - DIP_HOME
+      - DIP_PATH
     EOS
   end
 
