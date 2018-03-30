@@ -3,15 +3,14 @@ class Dip < Formula
 
   desc "Distribute CLIs using docker-compose"
   homepage "https://github.com/amancevice/dip"
-  url "https://github.com/amancevice/dip/archive/2.4.0.tar.gz"
-  sha256 "227c78c10f39ffb118e362369a567dda82e78d06a9cf06f7bf886fc90499d646"
+  url "https://github.com/amancevice/dip/archive/2.4.1.tar.gz"
+  sha256 "8e4af6ba1602b33dace4539e0be54116b57db2e05c96518dff5597a4ff7c3aa0"
   head "https://github.com/amancevice/dip.git"
 
   bottle do
-    root_url "https://github.com/amancevice/homebrew-tap/releases/download/dip-2.4.0"
+    root_url "https://github.com/amancevice/homebrew-tap/releases/download/dip-2.4.1"
     cellar :any
-    sha256 "765c46cb15ac20c97372540961f8b62e8e522d8797f61773f1dbb1b16435576f" => :high_sierra
-    sha256 "9a94f522a46fac19f580e8f5bc393d86e99716dd83c668a25f6b74099956271e" => :sierra
+    sha256 "59df32cc45cd52e4b79785aeafd74f4d806d9cb98e246e80ac53d68ebd0eb28c" => :high_sierra
   end
 
   depends_on "python"
@@ -128,13 +127,12 @@ class Dip < Formula
 
     # Initialize settings
     (buildpath/"etc/dip/settings.json").write "{}"
-    cd "#{buildpath}/etc" do
-      etc.install "dip"
-    end
+    etc.install "etc/dip"
 
     # Install bash completion
     output = Utils.popen_read("#{libexec}/bin/dip completion")
-    (bash_completion/"dip").write output
+    (buildpath/"dip.completion").write output
+    bash_completion.install "dip.completion" => "dip"
   end
 
   def caveats
