@@ -1,16 +1,14 @@
 class Tox < Formula
   include Language::Python::Virtualenv
 
-  desc "tox automation project"
+  desc "Shiny new formula"
   homepage "https://tox.readthedocs.org/"
-  url "https://pypi.python.org/packages/a7/36/e61f5263491a179311c4eaf40cf7c7bfd3aec9087687da25a1d900cc089a/tox-2.9.1.tar.gz#md5=7aa99d0eb206e4b070b9546115271cdb"
-  sha256 "752f5ec561c6c08c5ecb167d3b20f4f4ffc158c0ab78855701a75f5cef05f4b8"
+  url "https://files.pythonhosted.org/packages/e9/56/7c6f0dd000a7634cae819c65a7452bb6ead29a4b1b1516ee05fe9dd5334c/tox-3.0.0.tar.gz"
+  sha256 "96efa09710a3daeeb845561ebbe1497641d9cef2ee0aea30db6969058b2bda2f"
 
   bottle do
-    root_url "https://github.com/amancevice/homebrew-tap/releases/download/tox-2.9.1"
-    cellar :any
-    sha256 "d3559ec239b540960dbad26053f5f1a3889e85c6e27129a2e431eedc2a25dd46" => :high_sierra
-    sha256 "c5529f0b01ee380df03a53d8430c1de66eaa10435897d989d3d2f26a50af7c09" => :sierra
+    cellar :any_skip_relocation
+    sha256 "4b90a1eb0fd3d0a433d2ac0d1c340b0ba33beb48f494cc47a526c0605e52ce84" => :high_sierra
   end
 
   depends_on "python"
@@ -21,8 +19,8 @@ class Tox < Formula
   end
 
   resource "py" do
-    url "https://files.pythonhosted.org/packages/90/e3/e075127d39d35f09a500ebb4a90afd10f9ef0a1d28a6d09abeec0e444fdd/py-1.5.2.tar.gz"
-    sha256 "ca18943e28235417756316bfada6cd96b23ce60dd532642690dcfdaba988a76d"
+    url "https://files.pythonhosted.org/packages/f7/84/b4c6e84672c4ceb94f727f3da8344037b62cee960d80e999b1cd9b832d83/py-1.5.3.tar.gz"
+    sha256 "29c9fab495d7528e80ba1e343b958684f4ace687327e6f789a94bf3d1915f881"
   end
 
   resource "six" do
@@ -31,8 +29,8 @@ class Tox < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/d4/0c/9840c08189e030873387a73b90ada981885010dd9aea134d6de30cd24cb8/virtualenv-15.1.0.tar.gz"
-    sha256 "02f8102c2436bb03b3ee6dede1919d1dac8a427541652e5ec95171ec8adbc93a"
+    url "https://files.pythonhosted.org/packages/b1/72/2d70c5a1de409ceb3a27ff2ec007ecdd5cc52239e7c74990e32af57affe9/virtualenv-15.2.0.tar.gz"
+    sha256 "1d7e241b431e7afce47e77f8843a276f652699d1fa4f93b9d8ce0076fd7b0b54"
   end
 
   def install
@@ -42,6 +40,6 @@ class Tox < Formula
 
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
-    assert_match "Usage", shell_output("#{bin}/tox --help")
+    assert_match "usage", shell_output("#{bin}/tox --help")
   end
 end
