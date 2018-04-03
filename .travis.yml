@@ -18,8 +18,7 @@ before_install:
 - mkdir -p "$HOMEBREW_TAP_DIR"
 - rm -rf "$HOMEBREW_TAP_DIR"
 - ln -s "$PWD" "$HOMEBREW_TAP_DIR"
-# - rm /usr/local/bin/tox
-# - rm /usr/local/bin/tox-quickstart
+- sudo pip uninstall -y tox || echo "no-op"
 script:
 - brew audit --online --strict amancevice/tap/brewcleaner
 - brew audit --online --strict amancevice/tap/dip
