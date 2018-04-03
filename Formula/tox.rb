@@ -7,6 +7,7 @@ class Tox < Formula
   sha256 "96efa09710a3daeeb845561ebbe1497641d9cef2ee0aea30db6969058b2bda2f"
 
   bottle do
+    root_url "https://github.com/amancevice/homebrew-tap/releases/download/tox-3.0.0"
     cellar :any_skip_relocation
     sha256 "4b90a1eb0fd3d0a433d2ac0d1c340b0ba33beb48f494cc47a526c0605e52ce84" => :high_sierra
   end
