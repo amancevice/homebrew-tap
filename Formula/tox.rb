@@ -10,6 +10,8 @@ class Tox < Formula
     root_url "https://github.com/amancevice/homebrew-tap/releases/download/tox-3.0.0"
     cellar :any_skip_relocation
     sha256 "4b90a1eb0fd3d0a433d2ac0d1c340b0ba33beb48f494cc47a526c0605e52ce84" => :high_sierra
+    sha256 "41412d95fbcf9109cc77decd7b1b0272b322c997189b4a32b797b02c3bebea96" => :sierra
+    sha256 "5fd495d5d5771783fee69ab35f2cd2ec4909615d8d0d0f3e00d8b2d9c81a545b" => :el_capitan
   end
 
   depends_on "python"
