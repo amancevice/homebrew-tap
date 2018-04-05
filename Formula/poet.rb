@@ -3,14 +3,13 @@ class Poet < Formula
 
   desc "Shiny new formula"
   homepage "https://github.com/tdsmith/homebrew-pypi-poet"
-  url "https://github.com/tdsmith/homebrew-pypi-poet/archive/v0.9.0.tar.gz"
-  sha256 "41dd7203ce4f281a2d76c0e67d11163c7601967761ec22fbc77fda01f88ff911"
+  url "https://github.com/tdsmith/homebrew-pypi-poet/archive/v0.10.0.tar.gz"
+  sha256 "40a7b4bcfd96238361712272a8b9a99349b80ccd4573b23727d8d2ccdc4a4ac7"
 
   bottle do
-    root_url "https://github.com/amancevice/homebrew-tap/releases/download/poet-0.9.0"
-    cellar :any
-    sha256 "8d6335f41b81682ff73078a2431207d11a37e263895d92400ae31126b772546a" => :high_sierra
-    sha256 "9c62ff31648096d86cd459ee25e356375d30105a0cae705434c0b71f475932df" => :sierra
+    root_url "https://github.com/amancevice/homebrew-tap/releases/download/poet-0.10.0"
+    cellar :any_skip_relocation
+    sha256 "73547d3d1cc55c751296134f1bd26e527abdca64506f8c139353f88a213dac19" => :high_sierra
   end
 
   depends_on "python"
@@ -26,7 +25,6 @@ class Poet < Formula
   end
 
   def install
-    virtualenv_create(libexec, "python3")
     virtualenv_install_with_resources
   end
 
