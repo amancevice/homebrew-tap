@@ -10,6 +10,8 @@ class Poet < Formula
     root_url "https://github.com/amancevice/homebrew-tap/releases/download/poet-0.10.0"
     cellar :any_skip_relocation
     sha256 "73547d3d1cc55c751296134f1bd26e527abdca64506f8c139353f88a213dac19" => :high_sierra
+    sha256 "7e0b3e31153473db6d1a3a7b7f9eb4ffd792a5613eb2aae5fe9a479d22aa153d" => :sierra
+    sha256 "8df0d52a1e405f2ad9ccc9ae49d45d332bd030a090c19e15ecada9bcdc6b7a7a" => :el_capitan
   end
 
   depends_on "python"
