@@ -23,15 +23,12 @@ script:
 - brew audit --online --strict amancevice/tap/brewcleaner
 - brew audit --online --strict amancevice/tap/dip
 - brew audit --online --strict amancevice/tap/poet
-- brew audit --online --strict amancevice/tap/tox
 - brew install --build-bottle amancevice/tap/brewcleaner
 - brew install --build-bottle amancevice/tap/dip
 - brew install --build-bottle amancevice/tap/poet
-- brew install --build-bottle amancevice/tap/tox
 - brew bottle --no-rebuild amancevice/tap/brewcleaner
 - brew bottle --no-rebuild amancevice/tap/dip
 - brew bottle --no-rebuild amancevice/tap/poet
-- brew bottle --no-rebuild amancevice/tap/tox
 deploy:
 - provider: releases
   api_key:
