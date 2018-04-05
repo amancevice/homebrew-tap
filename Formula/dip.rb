@@ -124,7 +124,6 @@ class Dip < Formula
 
   def install
     # Install dip
-    virtualenv_create(libexec, "python3")
     virtualenv_install_with_resources
 
     # Initialize settings
@@ -152,5 +151,17 @@ class Dip < Formula
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
     assert_match "Usage", shell_output("#{bin}/dip --help")
+    (testpath/"settings.json").write "{}"
+    (testpath/"docker-compose.yml").write <<~EOS
+      version: '3'
+      services:
+        dipex:
+          command: python --version
+          image: python
+    EOS
+    ENV["DIP_HOME"] = ENV["DIP_PATH"] = testpath
+    assert_match "{}", shell_output("#{bin}/dip config")
+    system "#{bin}/dip", "install", "dipex", testpath
+    assert_match "#{testpath}", shell_output("#{bin}/dip config dipex home")
   end
 end
