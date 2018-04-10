@@ -3,6 +3,8 @@ compiler: clang
 os: osx
 matrix:
   include:
+  # High Sierra
+  - osx_image: xcode9.3
   # Sierra
   - osx_image: xcode9.2
   # El Capitan
