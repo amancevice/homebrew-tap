@@ -4,7 +4,7 @@ os: osx
 matrix:
   include:
   # High Sierra
-  - osx_image: xcode9.3
+  - osx_image: xcode9.4
   # Sierra
   - osx_image: xcode9.2
   # El Capitan
