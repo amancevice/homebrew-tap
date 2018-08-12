@@ -3,28 +3,24 @@ class Dip < Formula
 
   desc "Distribute CLIs using docker-compose"
   homepage "https://github.com/amancevice/dip"
-  url "https://github.com/amancevice/dip/archive/2.4.1.tar.gz"
-  sha256 "8e4af6ba1602b33dace4539e0be54116b57db2e05c96518dff5597a4ff7c3aa0"
-  head "https://github.com/amancevice/dip.git"
+  url "https://github.com/amancevice/dip/archive/2.5.0.tar.gz"
+  sha256 "f1229c82b1f26cb012038c4c55b3b68ce87e9d746ce91490a1049d39c8a04188"
 
   bottle do
-    root_url "https://github.com/amancevice/homebrew-tap/releases/download/dip-2.4.1"
+    root_url "https://github.com/amancevice/homebrew-tap/releases/download/dip-2.5.0"
     cellar :any
-    sha256 "59df32cc45cd52e4b79785aeafd74f4d806d9cb98e246e80ac53d68ebd0eb28c" => :high_sierra
-    sha256 "5edb4147eb3bfb0fa2c35fe169b87cc784e9e7f6eb21efd1f2ed2fc82d9236d7" => :sierra
-    sha256 "aca58f2478e2d2a0a311e6e64ac85de74e6b10e6e760c704f31784513df059bf" => :el_capitan
   end
 
   depends_on "python"
 
   resource "cached-property" do
-    url "https://files.pythonhosted.org/packages/06/2c/ad2baf15231a215c7be0324bdebd3175c320e60eba4cf347560d5749c5b8/cached-property-1.3.1.tar.gz"
-    sha256 "6562f0be134957547421dda11640e8cadfa7c23238fc4e0821ab69efdb1095f3"
+    url "https://files.pythonhosted.org/packages/93/c7/914bdabc1d022fc16584c416f395cdec12c76e1169aebf05d654c16e5b47/cached-property-1.4.3.tar.gz"
+    sha256 "f1f9028757dc40b4cb0fd2234bd7b61a302d7b84c683cb8c2c529238a24b8938"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/23/3f/8be01c50ed24a4bd6b8da799839066ce0288f66f5e11f0367323467f0cbc/certifi-2017.11.5.tar.gz"
-    sha256 "5ec74291ca1136b40f0379e1128ff80e866597e4e2c1e755739a913bbc3613c0"
+    url "https://files.pythonhosted.org/packages/4d/9c/46e950a6f4d6b4be571ddcae21e7bc846fcbb88f1de3eff0f6dd0a6be55d/certifi-2018.4.16.tar.gz"
+    sha256 "13e698f54293db9f89122b0581843a782ad0934a4fe0172d2a980ba77fc61bb7"
   end
 
   resource "chardet" do
@@ -38,23 +34,23 @@ class Dip < Formula
   end
 
   resource "colored" do
-    url "https://files.pythonhosted.org/packages/19/be/85e6c8c1fd9b3d15d4500531ccbb164854d427690ad41c9ce9222ccabaf5/colored-1.3.5.tar.gz"
-    sha256 "84fb1c1e6686d94232a14ab1abec146af0c72f756067ea684bc401ec1f4b442b"
+    url "https://files.pythonhosted.org/packages/58/07/636616667b47d3115b0288311511c5fb446d0e499036b7db858704c89066/colored-1.3.93.tar.gz"
+    sha256 "8296ea990e3f6b7822f44eec21408b126dfb9c1c031306b859e3f7d46cc27075"
   end
 
   resource "docker" do
-    url "https://files.pythonhosted.org/packages/ee/e6/f0b3ca4d0f973751a012734c84339468d30895f60077c08cdbe215c841f7/docker-2.7.0.tar.gz"
-    sha256 "144248308e8ea31c4863c6d74e1b55daf97cc190b61d0fe7b7313ab920d6a76c"
+    url "https://files.pythonhosted.org/packages/66/d0/2f6702857613e8dc9190bd1224434be6e8b25bb86812a1642947baf320b8/docker-3.5.0.tar.gz"
+    sha256 "bc693be5a84b3b9e5aaf156068c5c0a445ee5138c638c3fbc857133bf67ebe07"
   end
 
   resource "docker-compose" do
-    url "https://files.pythonhosted.org/packages/5d/57/9f50507280bc4269b6e8998fee7539ed2e0a98ab1bcc54d62b49cbc021ca/docker-compose-1.18.0.tar.gz"
-    sha256 "2930cbfe2685018fbb75377600ab6288861d9955717b3f14212f63950351d379"
+    url "https://files.pythonhosted.org/packages/a5/3b/cecbf151bb4b4bf8c0b0c82d40e67bf08dc1c6daea929f95f2a7010f5a4b/docker-compose-1.22.0.tar.gz"
+    sha256 "915cdd0ea7aff349d27a8e0585124ac38695635201770a35612837b25e234677"
   end
 
   resource "docker-pycreds" do
-    url "https://files.pythonhosted.org/packages/95/2e/3c99b8707a397153bc78870eb140c580628d7897276960da25d8a83c4719/docker-pycreds-0.2.1.tar.gz"
-    sha256 "93833a2cf280b7d8abbe1b8121530413250c6cd4ffed2c1cf085f335262f7348"
+    url "https://files.pythonhosted.org/packages/9e/7a/109e0a3cc3c19534edd843c16e792c67911b5b4072fdd34ddce90d49f355/docker-pycreds-0.3.0.tar.gz"
+    sha256 "8b0e956c8d206f832b06aa93a710ba2c3bcbacb5a314449c040b0b814355bbff"
   end
 
   resource "dockerpty" do
@@ -68,13 +64,13 @@ class Dip < Formula
   end
 
   resource "gitdb2" do
-    url "https://files.pythonhosted.org/packages/84/11/22e68bd46fd545b17d0a0b200cf75c20e9e7b817726a69ad5f3070fd0d3c/gitdb2-2.0.3.tar.gz"
-    sha256 "b60e29d4533e5e25bb50b7678bbc187c8f6bcff1344b4f293b2ba55c85795f09"
+    url "https://files.pythonhosted.org/packages/b9/36/4bdb753087a9232899ac482ee2d5da25f50b63998d661aa4e8170acd95b5/gitdb2-2.0.4.tar.gz"
+    sha256 "bb4c85b8a58531c51373c89f92163b92f30f81369605a67cd52d1fc21246c044"
   end
 
   resource "GitPython" do
-    url "https://files.pythonhosted.org/packages/e1/ec/9f2bbc86a0188bf83221212be87fa4b70dc71a9385efcc95a25e9789894e/GitPython-2.1.7.tar.gz"
-    sha256 "13c7cd99c2bf277fc99accfc25148752fa90e7cc6c6d08a3f01d229dacb461d9"
+    url "https://files.pythonhosted.org/packages/4d/e8/98e06d3bc954e3c5b34e2a579ddf26255e762d21eb24fede458eff654c51/GitPython-2.1.11.tar.gz"
+    sha256 "8237dc5bfd6f1366abeee5624111b9d6879393d84745a507de0fda86043b65a8"
   end
 
   resource "idna" do
@@ -88,8 +84,8 @@ class Dip < Formula
   end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/4a/85/db5a2df477072b2902b0eb892feb37d88ac635d36245a72a6a69b23b383a/PyYAML-3.12.tar.gz"
-    sha256 "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab"
+    url "https://files.pythonhosted.org/packages/9e/a3/1d13970c3f36777c583f136c136f804d70f500168edc1edea6daa7200769/PyYAML-3.13.tar.gz"
+    sha256 "3ef3092145e9b70e3ddd2c7ad59bdd0252a94dfe3949721633e41344de00a6bf"
   end
 
   resource "requests" do
@@ -103,8 +99,8 @@ class Dip < Formula
   end
 
   resource "smmap2" do
-    url "https://files.pythonhosted.org/packages/48/d8/25d9b4b875ab3c2400ec7794ceda8093b51101a9d784da608bf65ab5f5f5/smmap2-2.0.3.tar.gz"
-    sha256 "c7530db63f15f09f8251094b22091298e82bf6c699a6b8344aaaef3f2e1276c3"
+    url "https://files.pythonhosted.org/packages/ad/e9/0fb974b182ff41d28ad267d0b4201b35159619eb610ea9a2e036817cb0b8/smmap2-2.0.4.tar.gz"
+    sha256 "dc216005e529d57007ace27048eb336dcecb7fc413cfb3b2f402bb25972b69c6"
   end
 
   resource "texttable" do
@@ -118,12 +114,13 @@ class Dip < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/83/91/162f2c76729633d1dc36b09746895c7766bc183bba94cb4d2ec398676060/websocket_client-0.46.0.tar.gz"
-    sha256 "933f6bbf08b381f2adbca9e93d7e7958ba212b42c73acb310b18f0fbe74f3738"
+    url "https://files.pythonhosted.org/packages/28/85/df04ec21c622728316b591c2852fd20a0e74324eeb6ca26f351844ba815f/websocket_client-0.48.0.tar.gz"
+    sha256 "18f1170e6a1b5463986739d9fd45c4308b0d025c1b2f9b88788d8f69e8a5eb4a"
   end
 
   def install
     # Install dip
+    ENV['SETUPTOOLS_SCM_PRETEND_VERSION'] = version
     virtualenv_install_with_resources
 
     # Initialize settings
@@ -131,7 +128,7 @@ class Dip < Formula
     etc.install "etc/dip"
 
     # Install bash completion
-    output = Utils.popen_read("#{libexec}/bin/dip completion")
+    output = Utils.popen_read("_DIP_COMPLETE=source #{libexec}/bin/dip")
     (buildpath/"dip.completion").write output
     bash_completion.install "dip.completion" => "dip"
   end
