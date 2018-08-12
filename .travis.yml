@@ -31,6 +31,8 @@ script:
 - brew bottle --no-rebuild amancevice/tap/brewcleaner
 - brew bottle --no-rebuild amancevice/tap/dip
 - brew bottle --no-rebuild amancevice/tap/poet
+before_deploy:
+- for file in $(find . -name "*.bottle*.tar.gz"); do mv ${file} $(echo ${file} | sed s/--/-/); done
 deploy:
 - provider: releases
   api_key:
