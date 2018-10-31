@@ -4,11 +4,14 @@ class Dip < Formula
   desc "Distribute CLIs using docker-compose"
   homepage "https://github.com/amancevice/dip"
   url "https://github.com/amancevice/dip/archive/2.5.1.tar.gz"
-  # sha256 "f1229c82b1f26cb012038c4c55b3b68ce87e9d746ce91490a1049d39c8a04188"
+  sha256 "4ca0ed6958321d861e5211629ee2eb2ded8a117677f8a347a67aa5d11c9f367b"
 
   bottle do
     root_url "https://github.com/amancevice/homebrew-tap/releases/download/dip-2.5.1"
     cellar :any
+    sha256 "448c7d5dbc0880697cf57c73e7faf98c991432922497246d6afaca7c1e952f53" => :mojave
+    sha256 "426d4e378ca2251fc18fa8f57b9b9b6855cb24d625c6dff6ceb3e5127b48d002" => :high_sierra
+    sha256 "2954dfa7e84f0eb9a3f80ca5dea640ee2e1f563d7add54471ef4f8b38fcd3f95" => :sierra
   end
 
   depends_on "python"
