@@ -9,9 +9,6 @@ class Dip < Formula
   bottle do
     root_url "https://github.com/amancevice/homebrew-tap/releases/download/dip-2.5.1"
     cellar :any
-    sha256 "448c7d5dbc0880697cf57c73e7faf98c991432922497246d6afaca7c1e952f53" => :mojave
-    sha256 "426d4e378ca2251fc18fa8f57b9b9b6855cb24d625c6dff6ceb3e5127b48d002" => :high_sierra
-    sha256 "2954dfa7e84f0eb9a3f80ca5dea640ee2e1f563d7add54471ef4f8b38fcd3f95" => :sierra
   end
 
   depends_on "python"
@@ -39,11 +36,6 @@ class Dip < Formula
   resource "colored" do
     url "https://files.pythonhosted.org/packages/58/07/636616667b47d3115b0288311511c5fb446d0e499036b7db858704c89066/colored-1.3.93.tar.gz"
     sha256 "8296ea990e3f6b7822f44eec21408b126dfb9c1c031306b859e3f7d46cc27075"
-  end
-
-  resource "dip" do
-    url "https://files.pythonhosted.org/packages/f5/16/2b1838782dab97dae6dc6d091ffeb6fd24745faebdbdb469be1248022bd5/dip-2.5.1.tar.gz"
-    sha256 "bf7332f81d4892b725c26d86c93cad2f8723696a266b36e82e763de49e4fe104"
   end
 
   resource "docker" do
