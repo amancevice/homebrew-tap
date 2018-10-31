@@ -3,6 +3,8 @@ compiler: clang
 os: osx
 matrix:
   include:
+  # Mojave
+  - osx_image: xcode10
   # High Sierra
   - osx_image: xcode9.4
   # Sierra
