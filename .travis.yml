@@ -22,13 +22,10 @@ before_install:
 script:
 - brew audit --online --strict amancevice/tap/brewcleaner
 - brew audit --online --strict amancevice/tap/dip
-- brew audit --online --strict amancevice/tap/poet
 - brew install --build-bottle amancevice/tap/brewcleaner
 - brew install --build-bottle amancevice/tap/dip
-- brew install --build-bottle amancevice/tap/poet
 - brew bottle --no-rebuild amancevice/tap/brewcleaner
 - brew bottle --no-rebuild amancevice/tap/dip
-- brew bottle --no-rebuild amancevice/tap/poet
 before_deploy:
 - for file in $(find . -name "*.bottle*.tar.gz"); do mv ${file} $(echo ${file} | sed s/--/-/); done
 deploy:
