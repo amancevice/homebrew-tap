@@ -3,26 +3,39 @@ class Dip < Formula
 
   desc "Distribute CLIs using docker-compose"
   homepage "https://github.com/amancevice/dip"
-  url "https://github.com/amancevice/dip/archive/2.6.1.tar.gz"
-  sha256 "07abe6ef93bc2fe91275f95ad74476d2cb7c79c7417be5d02a62d0eee1811ddf"
+  url "https://github.com/amancevice/dip/archive/2.6.2.tar.gz"
+  sha256 "8c440c42d9107314ce3e64bb3220b1b7df34dfc0e331312673aeb280b41f7763"
 
   bottle do
-    root_url "https://github.com/amancevice/homebrew-tap/releases/download/dip-2.6.1"
+    root_url "https://github.com/amancevice/homebrew-tap/releases/download/dip-2.6.2"
     cellar :any
-    sha256 "f7460351885b0bd1557c4bd86e65b96c572f323ffeefa845e46bd1d383b645c5" => :mojave
-    sha256 "d6a2a65ccf7e06640661e431414d52175fdf015e81bf0abc0248fbd16ecc8794" => :high_sierra
-    sha256 "7409460fad2ee8238c9dfd672a6dc10daabe67178ac1deda778c4787a8e779e6" => :sierra
   end
 
   depends_on "python"
+
+  resource "asn1crypto" do
+    url "https://files.pythonhosted.org/packages/fc/f1/8db7daa71f414ddabfa056c4ef792e1461ff655c2ae2928a2b675bfed6b4/asn1crypto-0.24.0.tar.gz"
+    sha256 "9d5c20441baf0cb60a4ac34cc447c6c189024b6b4c6cd7877034f4965c464e49"
+  end
+
+  resource "bcrypt" do
+    url "https://files.pythonhosted.org/packages/ce/3a/3d540b9f5ee8d92ce757eebacf167b9deedb8e30aedec69a2a072b2399bb/bcrypt-3.1.6.tar.gz"
+    sha256 "44636759d222baa62806bbceb20e96f75a015a6381690d1bc2eda91c01ec02ea"
+  end
+
   resource "cached-property" do
     url "https://files.pythonhosted.org/packages/57/8e/0698e10350a57d46b3bcfe8eff1d4181642fd1724073336079cb13c5cf7f/cached-property-1.5.1.tar.gz"
     sha256 "9217a59f14a5682da7c4b8829deadbfc194ac22e9908ccf7c8820234e80a1504"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/55/54/3ce77783acba5979ce16674fc98b1920d00b01d337cfaaf5db22543505ed/certifi-2018.11.29.tar.gz"
-    sha256 "47f9c83ef4c0c621eaef743f133f09fa8a74a9b75f037e8624f83bd1b6626cb7"
+    url "https://files.pythonhosted.org/packages/06/b8/d1ea38513c22e8c906275d135818fee16ad8495985956a9b7e2bb21942a1/certifi-2019.3.9.tar.gz"
+    sha256 "b26104d6835d1f5e49452a26eb2ff87fe7090b89dfcaee5ea2212697e1e1d7ae"
+  end
+
+  resource "cffi" do
+    url "https://files.pythonhosted.org/packages/64/7c/27367b38e6cc3e1f49f193deb761fe75cda9f95da37b67b422e62281fcac/cffi-1.12.2.tar.gz"
+    sha256 "e113878a446c6228669144ae8a56e268c91b7f1fafae927adc4879d9849e0ea7"
   end
 
   resource "chardet" do
@@ -40,14 +53,19 @@ class Dip < Formula
     sha256 "8296ea990e3f6b7822f44eec21408b126dfb9c1c031306b859e3f7d46cc27075"
   end
 
+  resource "cryptography" do
+    url "https://files.pythonhosted.org/packages/07/ca/bc827c5e55918ad223d59d299fff92f3563476c3b00d0a9157d9c0217449/cryptography-2.6.1.tar.gz"
+    sha256 "26c821cbeb683facb966045e2064303029d572a87ee69ca5a1bf54bf55f93ca6"
+  end
+
   resource "docker" do
-    url "https://files.pythonhosted.org/packages/cc/9c/50ec68951d10fc341b650a2f5a6ed3925f7e4adc245113acfe64eb61f46a/docker-3.6.0.tar.gz"
-    sha256 "145c673f531df772a957bd1ebc49fc5a366bcd55efa0e64bbd029f5cc7a1fd8e"
+    url "https://files.pythonhosted.org/packages/4b/79/4206ea568bd0d134cd7cb6022dd60bea06ffdb8b5564288ca428fd3aeb0d/docker-3.7.2.tar.gz"
+    sha256 "c456ded5420af5860441219ff8e51cdec531d65f4a9e948ccd4133e063b72f50"
   end
 
   resource "docker-compose" do
-    url "https://files.pythonhosted.org/packages/3d/03/c7803cbbb1dd89f85409929e9e53b4c58466449139b15a18898515499407/docker-compose-1.23.2.tar.gz"
-    sha256 "ff079e9e39cde7e437ed87dd5434ea1647f7e203f6327cc5f7db7ef10fa452f4"
+    url "https://files.pythonhosted.org/packages/78/8a/435401ace63484c13d86fd06aea11f4209c7bba043a781b4b5f854f3fbf4/docker-compose-1.24.0.tar.gz"
+    sha256 "5582a51827676f5243473310e911503e1016bbdf3be1b89dcb4201f42b5fa369"
   end
 
   resource "docker-pycreds" do
@@ -85,6 +103,26 @@ class Dip < Formula
     sha256 "6ff5f3180870836cae40f06fa10419f557208175f13ad7bc26caa77beb1f6e02"
   end
 
+  resource "paramiko" do
+    url "https://files.pythonhosted.org/packages/a4/57/86681372e7a8d642718cadeef38ead1c24c4a1af21ae852642bf974e37c7/paramiko-2.4.2.tar.gz"
+    sha256 "a8975a7df3560c9f1e2b43dc54ebd40fd00a7017392ca5445ce7df409f900fcb"
+  end
+
+  resource "pyasn1" do
+    url "https://files.pythonhosted.org/packages/46/60/b7e32f6ff481b8a1f6c8f02b0fd9b693d1c92ddd2efb038ec050d99a7245/pyasn1-0.4.5.tar.gz"
+    sha256 "da2420fe13a9452d8ae97a0e478adde1dee153b11ba832a95b223a2ba01c10f7"
+  end
+
+  resource "pycparser" do
+    url "https://files.pythonhosted.org/packages/68/9e/49196946aee219aead1290e00d1e7fdeab8567783e83e1b9ab5585e6206a/pycparser-2.19.tar.gz"
+    sha256 "a988718abfad80b6b157acce7bf130a30876d27603738ac39f140993246b25b3"
+  end
+
+  resource "PyNaCl" do
+    url "https://files.pythonhosted.org/packages/61/ab/2ac6dea8489fa713e2b4c6c5b549cc962dd4a842b5998d9e80cf8440b7cd/PyNaCl-1.3.0.tar.gz"
+    sha256 "0c6100edd16fefd1557da078c7a31e7b7d7a52ce39fdca2bec29d4f7b6e7600c"
+  end
+
   resource "python-dotenv" do
     url "https://files.pythonhosted.org/packages/0f/fe/b0e23db9c6b7dc8c2b21b62990890c85441c95557be1f3f3d5a126ec3009/python-dotenv-0.10.1.tar.gz"
     sha256 "c9b1ddd3cdbe75c7d462cb84674d87130f4b948f090f02c7d7144779afb99ae0"
@@ -120,14 +158,14 @@ class Dip < Formula
     sha256 "de9529817c93f27c8ccbfead6985011db27bd0ddfcdb2d86f3f663385c6a9c22"
   end
 
-  resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/35/d4/14e446a82bc9172d088ebd81c0b02c5ca8481bfeecb13c9ef07998f9249b/websocket_client-0.54.0.tar.gz"
-    sha256 "e51562c91ddb8148e791f0155fdb01325d99bb52c4cdbb291aee7a3563fd0849"
+  resource "websocket_client" do
+    url "https://files.pythonhosted.org/packages/c5/01/8c9c7de6c46f88e70b5a3276c791a2be82ae83d8e0d0cc030525ee2866fd/websocket_client-0.56.0.tar.gz"
+    sha256 "1fd5520878b68b84b5748bb30e592b10d0a91529d5383f74f4964e72b297fd3a"
   end
 
   def install
     # Install dip
-    ENV['SETUPTOOLS_SCM_PRETEND_VERSION'] = version
+    ENV["SETUPTOOLS_SCM_PRETEND_VERSION"] = version
     virtualenv_install_with_resources
 
     # Initialize settings
@@ -166,6 +204,6 @@ class Dip < Formula
     ENV["DIP_HOME"] = ENV["DIP_PATH"] = testpath
     assert_match "{}", shell_output("#{bin}/dip config")
     system "#{bin}/dip", "install", "dipex", testpath
-    assert_match "#{testpath}", shell_output("#{bin}/dip config dipex home")
+    assert_match testpath, shell_output("#{bin}/dip config dipex home")
   end
 end
