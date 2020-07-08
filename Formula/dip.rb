@@ -14,7 +14,7 @@ class Dip < Formula
     sha256 "698d7edf2f5a580dbc23292d0fc5384c56c9d503d4dd36741ce3f502f801dc3e" => :sierra
   end
 
-  depends_on "python"
+  depends_on "python@3.8"
 
   resource "asn1crypto" do
     url "https://files.pythonhosted.org/packages/fc/f1/8db7daa71f414ddabfa056c4ef792e1461ff655c2ae2928a2b675bfed6b4/asn1crypto-0.24.0.tar.gz"
