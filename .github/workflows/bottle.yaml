@@ -2,8 +2,8 @@ name: bottle
 on:
   pull_request:
   push:
-  schedule:
-    - cron: "11 21 * * *"
+  # schedule:
+  #   - cron: "11 21 * * *"
 jobs:
   dip:
     runs-on: macos-latest
