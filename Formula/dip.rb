@@ -176,8 +176,7 @@ class Dip < Formula
     etc.install "etc/dip"
 
     # Install bash completion
-    output = Utils.safe_popen_read({ "_DIP_COMPLETE" => "source" }, "#{libexec}/bin/dip")
-    (buildpath/"dip.completion").write output
+    (buildpath/"dip.completion").write "eval \"$(_DIP_COMPLETE=source dip)\""
     bash_completion.install "dip.completion" => "dip"
   end
 
