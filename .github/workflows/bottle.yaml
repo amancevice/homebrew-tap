@@ -2,15 +2,18 @@ name: bottle
 on:
   pull_request:
   push:
-  # schedule:
-  #   - cron: "11 21 * * *"
 jobs:
   dip:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v1
-      - run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-      - run: brew audit --online --strict Formula/dip.rb
-      - run: brew install --build-bottle Formula/dip.rb
-      - run: brew bottle --no-rebuild Formula/dip.rb
-      - run: ls -l
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/install-brew
+      - uses: ./.github/actions/audit
+        with: { formula: dip }
+  shenv:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/install-brew
+      - uses: ./.github/actions/audit
+        with: { formula: shenv }

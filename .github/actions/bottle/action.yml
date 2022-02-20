@@ -1,0 +1,15 @@
+name: Homebrew formula bottler
+description: Bottle Homebrew formula
+inputs:
+  formula:
+    description: Formula name
+    required: true
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: brew audit --online --strict Formula/${{ inputs.formula }}.rb
+    - shell: bash
+      run: brew install --build-bottle Formula/${{ inputs.formula }}.rb
+    # - shell: bash
+    #   run: brew bottle --no-rebuild Formula/${{ inputs.formula }}.rb

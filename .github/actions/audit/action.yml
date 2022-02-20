@@ -1,0 +1,11 @@
+name: Homebrew formula auditor
+description: Audit Homebrew formula
+inputs:
+  formula:
+    description: Formula name
+    required: true
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: brew audit --online --strict Formula/${{ inputs.formula }}.rb

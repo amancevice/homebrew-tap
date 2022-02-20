@@ -1,0 +1,11 @@
+name: Install Homebrew
+description: Install Homebrew on macOS
+inputs:
+  install-url:
+    description: Homebrew install script URL
+    default: https://raw.githubusercontent.com/Homebrew/install/master/install.sh
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: /bin/bash -c "$(curl -fsSL ${{ inputs.install-url }})"
