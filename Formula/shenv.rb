@@ -8,4 +8,8 @@ class Shenv < Formula
     libexec.install "bin"
     bin.install_symlink libexec/"bin/shenv"
   end
+
+  test do
+    assert_match "USAGE", shell_output("#{bin}/shenv --help").strip
+  end
 end
