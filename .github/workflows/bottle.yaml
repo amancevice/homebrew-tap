@@ -7,6 +7,10 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          key: homebrew
+          path: /usr/local/Homebrew/Library
       - uses: ./.github/actions/install-brew
       - uses: ./.github/actions/audit
         with: { formula: dip }
@@ -14,6 +18,10 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          key: homebrew
+          path: /usr/local/Homebrew/Library
       - uses: ./.github/actions/install-brew
       - uses: ./.github/actions/audit
         with: { formula: shenv }
