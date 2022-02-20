@@ -9,3 +9,5 @@ runs:
   steps:
     - shell: bash
       run: /bin/bash -c "$(curl -fsSL ${{ inputs.install-url }})"
+    - shell: bash
+      run: brew --prefix
