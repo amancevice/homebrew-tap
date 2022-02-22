@@ -1,8 +1,8 @@
 class Shenv < Formula
   desc "Source .env files into your shell"
   homepage "https://github.com/amancevice/shenv"
-  url "https://github.com/amancevice/shenv/archive/0.1.2.tar.gz"
-  sha256 "8c1aeaec05e138b3a0969681a343486046641f24a834ff59d621f3676cae3b9c"
+  url "https://github.com/amancevice/shenv/archive/0.1.3.tar.gz"
+  sha256 "5c27b34151f5953e3b094d3a5b6c51235caeaabb81a85e75e15c24c885f892bc"
 
   def install
     libexec.install "bin"
